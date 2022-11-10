@@ -18,23 +18,25 @@ const CACHE_NAME = 'offline';
 // Customize this with a different URL if needed.
 const OFFLINE_URL = '/iPad-Calculator/index.html';
 
-/*
-'/iPad-Calculator/index.html',
+var cacheAssets = [
+    '/iPad-Calculator/index.html',
     'https://fonts.googleapis.com/css2?family=Inter:wght@226;240;300;400&display=swap',
     'https://img.icons8.com/ios/100/help.png',
     'https://img.icons8.com/ios/100/play-button-circled--v1.png',
     'https://img.icons8.com/ios/100/love-circled.png',
     'https://help.apple.com/assets/5D5C549A0946227A3D4D97C7/5D5C54AD0946227A3D4D97FB/en_US/cadc928b998b9ce31be75d6bffa0de65.png',
-    "/iPad-Calculator",
-    "/"
-    */
+    "/iPad-Calculator"
+]
 
 self.addEventListener('install', (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     // Setting {cache: 'reload'} in the new request will ensure that the response
     // isn't fulfilled from the HTTP cache; i.e., it will be from the network.
-    await cache.add(new Request(OFFLINE_URL, {cache: 'reload'}));
+    //await cache.add(new Request(OFFLINE_URL, {cache: 'reload'}));
+    cache.addAll(cacheAssets)
+                 // When everything is set
+                 .then(() => self.skipWaiting())
   })());
 });
 
