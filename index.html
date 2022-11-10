@@ -1645,8 +1645,20 @@ MDAwIiBmaWxsPSIjMDAwMDAwIi8+CiA8L2c+Cjwvc3ZnPg==">
 			if(localeMode != 0) {
 				document.getElementById('b-dec').innerHTML="<span>,</span>";
 			}
-
 			updateSize();
+			
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/iPad-Calculator/serviceworker.js').then(
+				    () => {
+				      console.error('Service Worker registered!')
+				    },
+				    err => {
+				      console.error('SW registration failed!', err)
+				    }
+				  )
+                        } else {
+				console.log("Service Workers Not Supported!");
+			}
 		});
 		function hidePopup() {
 			var pop = document.getElementById("popup")
