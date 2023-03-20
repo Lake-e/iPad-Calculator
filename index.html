@@ -1193,12 +1193,12 @@ MDAwIiBmaWxsPSIjMDAwMDAwIi8+CiA8L2c+Cjwvc3ZnPg==">
 				handleClick(e);
 			    }
 			});
-			document.body.addEventListener("touchend", function(e) {
-			    if(!flag){
-				flag = true;
-				handleClick(e);
-			    }
-			});
+		/*document.body.addEventListener("touchend", function(e) {
+		    if(!flag){
+			flag = true;
+			handleClick(e);
+		    }
+		});*/
 		function handleClick(e) {
 			const timeoutId = setTimeout(function(){
 				flag = false; //reset flag for click/touch events
