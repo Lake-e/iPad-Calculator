@@ -613,7 +613,7 @@ CwK99fDR/wN7OkGAbIn+fgAAAABJRU5ErkJggg==">
 				<img id = "logo">
 				<h3>Calculator</h3>
 				<br>
-				<h5 style = "margin-top: -30px;">Version 1.1.4</h5>
+				<h5 style = "margin-top: -30px;">Version 1.1.5</h5>
 					<h5 style = "margin-top: -20px;">March 19, 2023</h5>
 					<h3>Created by Lake Edwards</h3>
 				<div id = "not-installed" style = "display: none;">
@@ -1186,23 +1186,24 @@ MDAwIiBmaWxsPSIjMDAwMDAwIi8+CiA8L2c+Cjwvc3ZnPg==">
 				localeMode = 2;
 			}
 		}
-		var flag = false; //flag for click and touch event conflict resolution
-		document.body.addEventListener("click", function(e) {
-			if(!flag){
-				flag = true;
+		var eventUsage = 0;
+			document.body.addEventListener("clickl", function(e) {
+			eventUsage = 2;
+			    handleClick(e);
+		});
+		document.body.addEventListener("mouseup", function(e) {
+			if(eventUsage == 1){
 				handleClick(e);
-			    }
-			});
-		/*document.body.addEventListener("touchend", function(e) {
-		    if(!flag){
-			flag = true;
-			handleClick(e);
-		    }
-		});*/
+			} else {
+				setTimeout(function(){
+					if(eventUsage == 0) {
+						eventUsage = 1;
+						handleClick(e);
+					}
+				}, 100);
+			}
+		});
 		function handleClick(e) {
-			const timeoutId = setTimeout(function(){
-				flag = false; //reset flag for click/touch events
-			}, 12);
 			var id = e.target.id;
 			if(id.startsWith("hstItm")){
 				if(noedit == 1) {
