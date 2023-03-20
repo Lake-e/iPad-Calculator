@@ -613,7 +613,7 @@ CwK99fDR/wN7OkGAbIn+fgAAAABJRU5ErkJggg==">
 				<img id = "logo">
 				<h3>Calculator</h3>
 				<br>
-				<h5 style = "margin-top: -30px;">Version 1.1.5</h5>
+				<h5 style = "margin-top: -30px;">Version 1.1.5.1</h5>
 					<h5 style = "margin-top: -20px;">March 19, 2023</h5>
 					<h3>Created by Lake Edwards</h3>
 				<div id = "not-installed" style = "display: none;">
@@ -1187,9 +1187,11 @@ MDAwIiBmaWxsPSIjMDAwMDAwIi8+CiA8L2c+Cjwvc3ZnPg==">
 			}
 		}
 		var eventUsage = 0;
-			document.body.addEventListener("click", function(e) {
-			eventUsage = 2;
-			    handleClick(e);
+		document.body.addEventListener("click", function(e) {
+			if(e.target.id.startsWith("b-")) {
+               			eventUsage = 2;
+            		}
+			handleClick(e);
 		});
 		document.body.addEventListener("touchend", function(e) {
 			if(eventUsage == 1){
