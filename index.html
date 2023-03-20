@@ -1187,11 +1187,11 @@ MDAwIiBmaWxsPSIjMDAwMDAwIi8+CiA8L2c+Cjwvc3ZnPg==">
 			}
 		}
 		var eventUsage = 0;
-			document.body.addEventListener("clickl", function(e) {
+			document.body.addEventListener("click", function(e) {
 			eventUsage = 2;
 			    handleClick(e);
 		});
-		document.body.addEventListener("mouseup", function(e) {
+		document.body.addEventListener("touchend", function(e) {
 			if(eventUsage == 1){
 				handleClick(e);
 			} else {
