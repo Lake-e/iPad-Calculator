@@ -25,7 +25,7 @@ var cacheAssets = [
     'https://img.icons8.com/ios/100/love-circled.png',
     'https://help.apple.com/assets/5D5C549A0946227A3D4D97C7/5D5C54AD0946227A3D4D97FB/en_US/cadc928b998b9ce31be75d6bffa0de65.png',
     '/iPad-Calculator/index.html',
-    "/iPad-Calculator"
+    "/iPad-Calculator",
     "/"
 ]
 
