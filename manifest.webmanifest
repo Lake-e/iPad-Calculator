@@ -6,6 +6,11 @@
         "src": "/iPad-Calculator/images/icon.png",
         "sizes": "256x256",
         "type": "image/png"
+      },
+      {
+        "src": "/iPad-Calculator/images/icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
       }
     ],
     "background_color": "black",
