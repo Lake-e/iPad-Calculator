@@ -618,7 +618,7 @@ CwK99fDR/wN7OkGAbIn+fgAAAABJRU5ErkJggg==">
 				<img id = "logo">
 				<h3>Calculator</h3>
 				<br>
-				<h5 style = "margin-top: -30px;">Version 1.1.6.1</h5>
+				<h5 style = "margin-top: -30px;">Version 1.1.6.2</h5>
 					<h5 style = "margin-top: -20px;">May 2, 2023</h5>
 					<h3>Created by Lake Edwards</h3>
 				<div id = "not-installed" style = "display: none;">
@@ -1209,7 +1209,7 @@ MDAwIiBmaWxsPSIjMDAwMDAwIi8+CiA8L2c+Cjwvc3ZnPg==">
 		var clicksFeatureEnabled = false;
 		function enableKeyClicks() {
 			if(!clicksFeatureEnabled) {
-				document.body.addEventListener("mousedown", function(e) {
+				document.body.addEventListener("touchstart", function(e) {
 					if(e.target.id.startsWith("b-")) {
 						clickSound();
 					}
