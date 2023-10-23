@@ -3,6 +3,7 @@
 	<head>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
 		<link rel="manifest" href="/iPad-Calculator/manifest.webmanifest">
+		<link rel="manifest" href="/manifest.webmanifest">
 		<meta name="full-screen" content="yes"/>
 		<meta name="screen-orientation" content="landscape"/>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
@@ -1706,11 +1707,18 @@ MDAwIiBmaWxsPSIjMDAwMDAwIi8+CiA8L2c+Cjwvc3ZnPg==">
 			
 			if ('serviceWorker' in navigator) {
 				navigator.serviceWorker.register('/iPad-Calculator/serviceworker.js').then(
-				    () => {
-				      console.error('Service Worker registered!')
-				    },
-				    err => {
-				      console.error('SW registration failed!', err)
+					() => {
+						console.error('Service Worker registered! (A)')
+				    	},
+					err => {
+						navigator.serviceWorker.register('/serviceworker.js').then(
+					    		() => {
+					      			console.error('Service Worker registered! (B)')
+					    		},
+					   	 	err => {
+					      			console.error('SW registration failed!', err)
+					    		}
+					  	) 
 				    }
 				  )
                         } else {
