@@ -1,0 +1,29 @@
+{
+    "name": "iPad Calculator",
+    "short_name": "Calculator",
+    "icons": [
+      {
+        "src": "https://lake-e.github.io/iPad-Calculator/images/icon.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+      {
+        "src": "https://lake-e.github.io/iPad-Calculator/images/icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "background_color": "black",
+    "categories": ["utilites", "productivity", "calculator"],
+    "screenshots" : [
+        {
+            "src": "https://lake-e.github.io/iPad-Calculator/images/calculator-image.jpeg",
+            "sizes": "1280x889",
+            "type": "image/jpeg",
+            "platform": "wide",
+            "label": "Calculator for iPad (using Stage Manager mode)"
+        }
+    ],
+    "display": "standalone",
+    "start_url": "/"
+}
