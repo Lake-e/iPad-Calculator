@@ -1695,7 +1695,7 @@ MDAwIiBmaWxsPSIjMDAwMDAwIi8+CiA8L2c+Cjwvc3ZnPg==">
 		addEventListener("load", function() {
 			const mqStandAlone = '(display-mode: standalone)';
 			let url = window.location.href;
-			if (!(navigator.standalone || window.matchMedia(mqStandAlone).matches)) || url.includes('?install=true' || url.includes('&install=true') {
+			if (!(navigator.standalone || window.matchMedia(mqStandAlone).matches)) || url.includes('?install=true') || url.includes('&install=true') {
 				document.getElementById("logo").src = document.getElementById("applogo").href;
 				var pop = document.getElementById("popup")
 				document.getElementById("not-installed").style.display = "block";
