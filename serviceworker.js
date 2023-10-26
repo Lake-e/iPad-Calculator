@@ -82,6 +82,11 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   console.log('Fetch intercepted for:', event.request.url);
 
+  if ( event.request.url.indexOf( 'googletagmanager' ) !== -1 ) {
+    console.log('Exiting for analytics request:', event.request.url);
+    return false;
+  }
+
   event.respondWith(
     fetch(event.request).then((response) => {
       const clonedResponse = response.clone(); // clone the response
