@@ -13,7 +13,7 @@ Copyright 2021 Google LLC
  */
 
 // Choose a cache name
-const cacheName = 'cache-v1.0';
+const cacheName = 'cache-v1.0.1';
 // List the files to precache
 const precacheResources = [
  '/',
