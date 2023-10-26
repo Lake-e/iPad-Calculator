@@ -14,6 +14,7 @@
       }
     ],
     "background_color": "black",
+    "theme_color": "black",
     "categories": ["utilites", "productivity", "calculator"],
     "screenshots" : [
         {
