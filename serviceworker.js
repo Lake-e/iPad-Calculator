@@ -30,21 +30,49 @@ const precacheResources = [
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
-self.addEventListener('install', (event) => {
-  console.log('ServiceWorker: Caching files:', precacheResources.length, precacheResources);
-  try {
-    event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
-  } catch (err) {
-    console.error('sw: cache.addAll');
-    for (let i of precacheResources) {
+// self.addEventListener('install', (event) => {
+//   console.log('ServiceWorker: Caching files:', precacheResources.length, precacheResources);
+//   try {
+//     event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
+//   } catch (err) {
+//     console.error('sw: cache.addAll');
+//     for (let i of precacheResources) {
+//         try {
+//           event.waitUntil(caches.open(cacheName).then((cache) => cache.add(i)));
+//         } catch (err) {
+//           console.warn('sw: cache.add',i);
+//         }
+//       }
+//   }
+// });
+/////
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(cacheName).then(async (cache) => {
+    let ok,
+    c = precacheResources;
+   
+    console.log('ServiceWorker: Caching files:', c.length, c);
+    try {
+      ok = await cache.addAll(c);
+    } catch (err) {
+      console.error('sw: cache.addAll');
+      for (let i of c) {
         try {
-          event.waitUntil(caches.open(cacheName).then((cache) => cache.add(i)));
+          ok = await cache.add(i);
         } catch (err) {
           console.warn('sw: cache.add',i);
         }
       }
-  }
+    }
+
+    return ok;
+  }));
+
+  console.log('ServiceWorker installed');
 });
+/////
+
+
 
 self.addEventListener('activate', (event) => {
   console.log('Service worker activate event!');
