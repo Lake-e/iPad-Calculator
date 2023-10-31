@@ -35,12 +35,21 @@
 
         .heading {
             display: grid;
-            grid-template-columns: 100px auto;
+            grid-template-columns: 100px auto 250px;
             place-items: center start;
             padding: 10px;
             max-width: 800px;
             margin: auto;
         }
+		@media (max-width: 630px) {
+			.heading {
+				display: grid;
+				grid-template-columns: 100px auto;
+			}
+			.storedotapp {
+				margin-top: 20px;
+			}
+		}
         h1, h3 {
             margin: 0;
             line-height: 1;
@@ -112,6 +121,12 @@
                 Created by Lake Edwards
             </h3>
         </div>
+		<div class="storedotapp">
+			<iframe 
+					src="https://static.store.app/widget/badge/index.html?sitePath=calculator-lakeedwards-com&theme=dark" 
+					style="width: 250px; height: 122px; border: none;">
+			</iframe>
+		</div>
     </div>
 
         <img class = "screenshot" src = "https://raw.githubusercontent.com/Lake-e/iPad-Calculator/main/images/calculator-screenshot-1.jpeg">
